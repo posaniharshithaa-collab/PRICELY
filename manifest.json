@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "PRICELY — Price Intelligence",
+  "version": "1.1.0",
+  "description": "Buy with context. Always. PRICELY reads the product you're viewing, analyzes price signals and reference ranges, and turns them into a clear, explainable buying decision.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {"default_title": "PRICELY"},
+  "background": {"service_worker": "src/background/service-worker.js"},
+  "content_scripts": [{"matches": ["<all_urls>"], "js": ["src/content/content.js"], "run_at": "document_idle"}],
+  "icons": {"16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png"}
+}

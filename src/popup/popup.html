@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=400,initial-scale=1"><title>PRICELY</title><link rel="stylesheet" href="popup.css"></head>
+<body><div class="app">
+<header class="header">
+  <div><div class="logo">PRICELY<span class="spark">✦</span></div><div class="sublogo">PRICE INTELLIGENCE</div></div>
+  <div class="header-actions"><div id="ready" class="ready"><span></span> READY</div><button id="minBtn" class="chrome-btn" title="Minimize PRICELY" aria-label="Minimize PRICELY">−</button><button id="closeBtn" class="chrome-btn" title="Close PRICELY" aria-label="Close PRICELY">×</button></div>
+</header><div class="divider"></div>
+<section id="landing" class="screen">
+  <div class="kicker">BUY WITH CONTEXT</div><h1>Know the <em>real value</em><br>before you buy.</h1>
+  <p class="intro">PRICELY reads the product you're viewing and turns price signals into a simple buying decision.</p>
+  <div class="current-card"><div class="tiny-label">CURRENT TAB</div><div id="landingStatus" class="landing-status">No product detected yet</div><button id="analyzeBtn">ANALYZE THIS PAGE ↗</button></div>
+  <div class="steps"><div><b>01</b><span>Price signal</span></div><div><b>02</b><span>Deal score</span></div><div><b>03</b><span>Decision</span></div></div>
+</section>
+<section id="scanning" class="screen hidden">
+  <div class="kicker">BUY WITH CONTEXT</div><h1>Reading the <em>real value</em><br>of this product.</h1>
+  <div class="scan-card"><div class="scan-orbit"><div class="scan-spark">✦</div></div><h2>Analyzing this page…</h2><p>Reading product details, prices and market signals.</p><div class="checks"><div><i>✓</i> Extracting product information</div><div><i>✓</i> Checking current price</div><div><i>✓</i> Building price context</div><div><i>✓</i> Analyzing deal signals</div></div></div>
+  <div class="steps scansteps"><div><b>01</b><span>Price signal</span></div><div><b>02</b><span>Deal score</span></div><div><b>03</b><span>Decision</span></div></div>
+</section>
+<section id="results" class="screen hidden">
+  <div class="result-toolbar"><button id="backBtn" class="text-btn">← BACK</button><button id="reanalyzeBtn" class="text-btn">RE-ANALYZE ↻</button></div>
+  <div class="product-head"><div id="thumb" class="thumb"><img id="img" alt=""></div><div class="product-copy"><div id="name" class="name"></div><div id="retailer" class="retailer"></div><div><span id="price" class="price"></span> <span class="live">LIVE PRICE</span></div></div></div>
+  <div id="priceMeta" class="price-meta"></div>
+  <button id="verdict" class="verdict"><span id="vdot" class="vdot"></span><span><strong id="vtitle"></strong><small id="vdetail"></small></span><b>›</b></button>
+  <div id="score-card" class="score-card"><div class="score-head"><span>DEAL SIGNAL <button id="scoreInfo" class="info" aria-label="Explain Deal Signal">i</button></span><button id="scoreCollapse" class="collapse" aria-label="Collapse Deal Signal">⌃</button></div><div class="score"><span>—</span><strong id="score">50</strong><small>/ 100</small></div><div id="reasons" class="reasons"></div></div>
+  <div class="history-card"><div class="history-head"><span>PRICE HISTORY</span><small id="historyType">ESTIMATED REFERENCE</small></div><div class="tabs"><button data-days="30">30D</button><button class="active" data-days="90">90D</button><button data-days="365">1Y</button></div><div class="chart-box"><svg id="chart" viewBox="0 0 348 132" preserveAspectRatio="none"></svg><span id="nowLabel"></span></div><div class="metrics"><div><b id="m1"></b><span>Current</span></div><div><b id="m2"></b><span id="typicalLabel">Est. typical</span></div><div><b id="m3"></b><span>Lowest</span></div><div><b id="m4"></b><span>Highest</span></div></div>
+    <div class="badges"><div><b>♛</b><span><strong id="lowBadge"></strong><small id="lowBadgeSub">model reference</small></span></div><div><b>⇄</b><span><strong id="marketBadge">Market context</strong><small id="marketBadgeSub">current price + conservative model</small></span></div></div>
+    <div class="source"><strong>DATA SOURCE <button id="sourceInfo" class="info" aria-label="Explain data source">i</button></strong><p id="source"></p></div>
+    <div id="comparisonNotice" class="notice hidden"></div>
+    <button id="viewBtn" class="view">VIEW ON RETAILER ↗</button>
+  </div>
+  <div class="footer"><span>PRICELY</span><small>v1.1.0</small><br><em>Buy with context. Always.</em></div>
+</section>
+<div id="infoModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><div class="modal-top"><span id="modalEyebrow">PRICELY</span><button id="modalClose" class="modal-close" aria-label="Close">×</button></div><h2 id="modalTitle"></h2><div id="modalBody"></div></div></div>
+</div><script type="module" src="popup.js"></script></body></html>
